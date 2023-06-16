@@ -1,0 +1,53 @@
+1 юнит тест
+
+ [TestFixture]
+    public class CharacterCounterTests
+    {
+        [Test]
+        public void CountCharacters_ReturnsCorrectCount()
+        {
+           
+            string input = "RussianKosmetick";
+            int expectedCount = 16;
+            CharacterCounter counter = new CharacterCounter();
+
+            
+            int actualCount = counter.CountCharacters(input);
+
+
+            Assert.That(actualCount, Is.EqualTo(expectedCount));
+        }
+    }
+
+    public class CharacterCounter
+    {
+        public int CountCharacters(string input)
+        {
+            return input.Length;
+        }
+    }
+
+2 юнит тест 
+
+   [TestFixture]
+    public class MultiplicationTests
+    {
+        [Test]
+        public void Multiply_ReturnsCorrectResult()
+        {
+            int num1 = 5;
+            int num2 = 10;
+            int expectedProduct = 50;
+            Calculator calculator = new Calculator();
+            int actualProduct = calculator.Multiply(num1, num2);
+            Assert.That(actualProduct, Is.EqualTo(expectedProduct));
+        }
+    }
+
+    public class Calculator
+    {
+        public int Multiply(int num1, int num2)
+        {
+            return num1 * num2;
+        }
+    }
